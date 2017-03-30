@@ -15,6 +15,10 @@ namespace IntNovAction.Utils.PdfGenerator.Web.Controllers
             return View(model);
         }
 
+        public ActionResult Embed()
+        {
+            return View();
+        }
 
         public virtual FileResult Print(bool landscape)
         {
@@ -38,6 +42,30 @@ namespace IntNovAction.Utils.PdfGenerator.Web.Controllers
 
             this.Response.AppendHeader("Content-Disposition", cd.ToString());
             return new FileContentResult(content, "application/pdf");
+        }
+
+        [HttpGet]
+        public ActionResult FormSample()
+        {
+            var model = new FormSampleModel();
+
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                FileName = "form.pdf",
+                Inline = true
+            };
+
+            var pdfGenerator = new PdfGenerator();
+            var content = pdfGenerator.GetDocument("~/Views/Home/FormSample.cshtml", model);
+
+            this.Response.AppendHeader("Content-Disposition", cd.ToString());
+            return new FileContentResult(content, "application/pdf");
+        }
+
+        [HttpPost]
+        public ActionResult FormSample(FormSampleModel model)
+        {
+            return View("FormSampleResult", model);
         }
     }
 }

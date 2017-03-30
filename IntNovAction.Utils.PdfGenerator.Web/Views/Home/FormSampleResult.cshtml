@@ -1,0 +1,17 @@
+﻿@model IntNovAction.Utils.PdfGenerator.Web.Models.FormSampleModel
+@{
+    ViewBag.Title = "FormSampleResult";
+}
+
+<h2>Results</h2>
+<div class="row">
+    <div class="col-md-12">
+        @Html.LabelFor(m => m.Field1)
+        @Model.Field1
+    </div>
+    <div class="col-md-12">
+        @Html.LabelFor(m => m.Field2)
+        @Model.Field2
+    </div>
+</div>
+

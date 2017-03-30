@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Embed";
+}
+
+@section Head{
+    
+    <script src="~/Scripts/pdfobject.js"></script>    
+
+    <script>
+        $(document).ready(function () {
+            $("[data-pdf-source]").each(function () {
+                var $this = $(this);
+                var source = $this.data("pdf-source");
+                PDFObject.embed(source, $this);
+            });
+        });
+    </script>
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="embed-responsive" style="min-height:1261px" data-pdf-source="@Url.Action("Print","Home", new { landscape = false })" >
+
+        </div>
+    </div>
+</div>
+
+
+

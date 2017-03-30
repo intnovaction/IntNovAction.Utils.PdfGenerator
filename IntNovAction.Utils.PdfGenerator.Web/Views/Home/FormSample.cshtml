@@ -1,0 +1,24 @@
+﻿@model IntNovAction.Utils.PdfGenerator.Web.Models.FormSampleModel
+@{
+    ViewBag.Title = "FormSample";
+}
+
+<h2>FormSample</h2>
+@using (Html.BeginForm("FormSample", "Home"))
+{
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(m => m.Field1)
+            @Html.EditorFor(m => m.Field1)
+        </div>
+        <div class="col-xs-12">
+            @Html.LabelFor(m => m.Field2)
+            @Html.EditorFor(m => m.Field2)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+}
