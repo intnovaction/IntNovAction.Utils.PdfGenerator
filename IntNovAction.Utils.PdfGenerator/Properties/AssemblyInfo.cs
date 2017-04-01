@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("IntNovAction.Utils.PdfGenerator")]
-[assembly: AssemblyDescription("Excel exporter for lists")]
+[assembly: AssemblyDescription("Genera pdfs a partir de vistas MVC")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("IntNovAction")]
 [assembly: AssemblyProduct("IntNovAction.Utils.PdfGenerator")]

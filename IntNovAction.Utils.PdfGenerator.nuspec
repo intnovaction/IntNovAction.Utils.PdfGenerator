@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>Utilidad para exportar a Pdf a partir de una vista de una aplicacion MVC y su modelo.</summary>
     <description>
-      Exporta una vista de MVC a pdf, pasandole el modelo
+      Exporta a pdf el contenido de una vista MVC.
     </description>
     <releaseNotes>Release Inicial</releaseNotes>
     <copyright>Copyright 2017</copyright>
