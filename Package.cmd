@@ -1,0 +1,1 @@
+.\utils\nuget.exe pack .\IntNovAction.Utils.PdfGenerator\IntNovAction.Utils.PdfGenerator.csproj -Verbosity Detailed -Prop Platform=AnyCPU -Verbosity Detailed

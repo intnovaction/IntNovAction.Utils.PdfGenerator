@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntNovAction.Utils.PdfGenerator", "IntNovAction.Utils.PdfGenerator\IntNovAction.Utils.PdfGenerator.csproj", "{6F05EE3A-47F9-4C20-AC11-6713EB791858}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntNovAction.Utils.PdfGenerator.Web", "IntNovAction.Utils.PdfGenerator.Web\IntNovAction.Utils.PdfGenerator.Web.csproj", "{39F84758-08BD-42FA-BEA3-3131043E88AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{BBF51BC6-02CC-483A-9C11-CBD699BB3087}"
+	ProjectSection(SolutionItems) = preProject
+		IntNovAction.Utils.PdfGenerator.nuspec = IntNovAction.Utils.PdfGenerator.nuspec
+		LICENSE = LICENSE
+		Package.cmd = Package.cmd
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

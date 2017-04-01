@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>IntNovAction.Utils.PdfGenerator</id>
+    <version>0.1.0</version>
+    <title>$title$</title>
+    <authors>IntNovAction</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/intnovaction/IntNovAction.Utils.PdfGenerator/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/intnovaction/IntNovAction.Utils.PdfGenerator</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Utilidad para exportar a Pdf a partir de una vista de una aplicacion MVC y su modelo.</summary>
+    <description>
+      Exporta una vista de MVC a pdf, pasandole el modelo
+    </description>
+    <releaseNotes>Release Inicial</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>c# PDF Export MVC</tags>
+  </metadata>
+</package>
