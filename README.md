@@ -1,4 +1,8 @@
 # IntNovAction.Utils.PdfGenerator
+[![NuGet](https://img.shields.io/nuget/v/Intnovaction.Utils.PdfGenerator.svg)](https://www.nuget.org/packages/IntNovAction.Utils.PdfGenerator/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 Utilidad para exportar una vista de MVC a pdf (como array de bytes)
 
 ```c#
