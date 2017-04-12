@@ -40,17 +40,6 @@ pdfGenerator.Configuration.MasterName = "~/Views/Shared/_Layout.cshtml";
 var content = pdfGenerator.GetDocument("~/Views/Home/Index.cshtml", model);
 ```
 
-### ReplaceImagePaths
-
-bool para indicar si se van a reemplazar los paths de las imágenes que se encuentren en la vista. Reemplaza el path de todas aquellas imágenes cuyo src empiece por '/' o '~/' por paths locales de la máquina (si las imágenes no tienen path locales, el motor no las renderiza en el pdf).
-El valor por defecto es true
-
-```c#
-var pdfGenerator = new PdfGenerator();
-pdfGenerator.Configuration.ReplaceImagePaths = true;
-var content = pdfGenerator.GetDocument("~/Views/Home/Index.cshtml", model);
-```
-
 ### ReplaceCssPaths
 
 bool para indicar si se van a reemplazar los paths de las hojas de estilo que se encuentren en la vista. Reemplaza el path de todas aquellos link cuyo href empiece por '/' o '~/' por paths locales de la máquina (si las hojas de estilo no tienen path locales, el motor no las interpreta).

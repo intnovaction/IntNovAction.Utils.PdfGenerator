@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>IntNovAction.Utils.PdfGenerator</id>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <title>$title$</title>
     <authors>IntNovAction</authors>
     <owners>$author$</owners>
@@ -14,7 +14,7 @@
     <description>
       Exporta a pdf el contenido de una vista MVC.
     </description>
-    <releaseNotes>Release Inicial</releaseNotes>
+    <releaseNotes>Mejora en la muestra de imágenes. Ya no hace reemplazos de rutas, ahora utiliza un ImageProvider para intentar obtener la imagen local o descargarla.</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>c# PDF Export MVC</tags>
   </metadata>

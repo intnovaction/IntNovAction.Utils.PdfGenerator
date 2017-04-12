@@ -1,4 +1,5 @@
 ﻿using IntNovAction.Utils.PdfGenerator.Configuration;
+using IntNovAction.Utils.PdfGenerator.Providers;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
@@ -28,15 +29,16 @@ namespace IntNovAction.Utils.PdfGenerator.Helpers
             {
                 var document = new Document(config.ITextSharpLayout);
 
-                var replacements = new List<string>();
-                if (config.ReplaceImagePaths)
-                {
-                    htmlString = ReplacePaths(htmlString, "img", "src", replacements);
-                }
+                var replacements = new Dictionary<string, string>();
 
                 if (config.ReplaceCssPaths)
                 {
-                    htmlString = ReplacePaths(htmlString, "link", "href", replacements);
+                    LoadReplacementPaths(htmlString, "link", "href", replacements);
+                }
+
+                foreach (var originalPath in replacements.Keys)
+                {
+                    htmlString = htmlString.Replace(originalPath, replacements[originalPath]);
                 }
 
                 // si la hoja de estilo ya está en el html, da un error => excluir las repetidas
@@ -44,12 +46,11 @@ namespace IntNovAction.Utils.PdfGenerator.Helpers
                 foreach (var stylesheetPath in config.StyleSheets)
                 {
                     var path = HostingEnvironment.MapPath(stylesheetPath);
-                    if (!replacements.Contains(path.ToLower()))
+                    if (!replacements.ContainsValue(path.ToLower()))
                     {
                         stylesheetsFilePath.Add(path);
                     }
                 }
-
 
 
                 var writer = PdfWriter.GetInstance(document, memStream);
@@ -86,6 +87,7 @@ namespace IntNovAction.Utils.PdfGenerator.Helpers
             var cssAppliersImpl = new CssAppliersImpl();
             var htmlPipelineContext = new HtmlPipelineContext(cssAppliersImpl);
             htmlPipelineContext.SetTagFactory(Tags.GetHtmlTagProcessorFactory());
+            htmlPipelineContext.SetImageProvider(new DownloadImageProvider());
 
             var pdfWriterPipeline = new PdfWriterPipeline(document, writer);
             var htmlPipe = new HtmlPipeline(htmlPipelineContext, pdfWriterPipeline);
@@ -102,7 +104,7 @@ namespace IntNovAction.Utils.PdfGenerator.Helpers
             }
         }
 
-        private static string ReplacePaths(string htmlString, string tag, string attrib, List<string> replacements)
+        private static void LoadReplacementPaths(string htmlString, string tag, string attrib, Dictionary<string, string> replacements)
         {
             var tagPattern = string.Format("<{0}", tag);
             var attribPattern = string.Format("{0}=\"/", attrib);
@@ -117,16 +119,16 @@ namespace IntNovAction.Utils.PdfGenerator.Helpers
                 {
                     var lastPosition = htmlString.IndexOf('"', attribIndex + 1);
                     var relPath = htmlString.Substring(attribIndex, lastPosition - attribIndex);
-                    var path = HostingEnvironment.MapPath(relPath);
-                    htmlString = htmlString.Replace(relPath, path);
-
-                    replacements.Add(path.ToLower());
+                    if (!replacements.ContainsKey(relPath))
+                    {
+                        var path = HostingEnvironment.MapPath(relPath);
+                        replacements.Add(relPath, path);
+                    }
                 }
 
                 tagIndex = htmlString.IndexOf(tagPattern, tagIndex + 1);
             }
 
-            return htmlString;
         }
 
     }

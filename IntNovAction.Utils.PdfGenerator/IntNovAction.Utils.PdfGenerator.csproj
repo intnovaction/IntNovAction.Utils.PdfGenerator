@@ -82,6 +82,7 @@
     <Compile Include="Helpers\RenderViewHelper.cs" />
     <Compile Include="PdfGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\DownloadImageProvider.cs" />
     <Compile Include="Utils\EmptyController.cs" />
   </ItemGroup>
   <ItemGroup>

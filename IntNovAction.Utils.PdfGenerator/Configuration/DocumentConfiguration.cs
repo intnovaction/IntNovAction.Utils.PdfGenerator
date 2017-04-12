@@ -41,11 +41,6 @@ namespace IntNovAction.Utils.PdfGenerator.Configuration
         public List<string> StyleSheets { get; internal set; } = new List<string>();
 
         /// <summary>
-        /// Indica si se sustituirán en la vista los paths de las imágenes por paths locales de la máquina: El generador sólo renderiza imágenes locales
-        /// </summary>
-        public bool ReplaceImagePaths { get; set; } = true;
-
-        /// <summary>
         /// Indica si se sustituiran en la vista los paths de las hojas de estilo por paths locales de la máquina: El generador sólo interpreta hojas de estilo
         /// locales. 
         /// </summary>
