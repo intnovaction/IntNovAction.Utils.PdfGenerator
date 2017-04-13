@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>IntNovAction.Utils.PdfGenerator</id>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <title>$title$</title>
     <authors>IntNovAction</authors>
     <owners>$author$</owners>
